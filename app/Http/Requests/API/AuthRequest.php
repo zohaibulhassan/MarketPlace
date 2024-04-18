@@ -29,6 +29,7 @@ class AuthRequest extends FormRequest
             return [
                 'name' => ['required', 'min:3', 'max:100'],
                 'username' => ['required', 'alpha_dash', 'unique:users,username'],
+                'city_id' => ['required', 'exists:cities,id'],
                 'email' => ['required', 'email', 'unique:users,email'],
                 'phone' => ['required', 'digits_between:12,13', 'unique:users,phone'],
                 'password' => [

@@ -14,6 +14,6 @@ use App\Http\Controllers\API\RegionController;
 |
 */
 
-Route::get("region/provinces", [RegionController::class, "getAllProvinces"])->name("region.provinces");
-Route::get("region/cities/{id?}", [RegionController::class, "getTheCitiesByProvinceId"])->name("region.cities");
-Route::get("region/couriers", [RegionController::class, "getAllCouriers"])->name("region.couriers");
+Route::get("region/cities", [RegionController::class, "getAllProvinces"])->name("region.provinces");
+Route::get("region/areas/{id?}", [RegionController::class, "getTheCitiesByProvinceId"])->name("region.cities");
+// Route::get("region/couriers", [RegionController::class, "getAllCouriers"])->name("region.couriers");
