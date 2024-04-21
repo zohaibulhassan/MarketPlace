@@ -22,6 +22,7 @@ class SubcategoryResource extends JsonResource
             'products' => $this->whenLoaded('products', fn () => $this->getProductsRelation())
         ];
     }
+//  check
     /**
      * Get the products relation and set into an array.
      *

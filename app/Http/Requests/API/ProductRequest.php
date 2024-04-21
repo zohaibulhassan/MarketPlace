@@ -26,6 +26,7 @@ class ProductRequest extends FormRequest
     {
         $rules = [
             'category_id' => ['required', 'integer', 'exists:categories,id'],
+            'subcategory_id' => ['required', 'integer', 'exists:subcategories,id'],
             'merchant_account_id' => ['required', 'integer', 'exists:merchant_accounts,id'],
             'description' => ['required', 'string'],
             'price' => ['required', 'integer', 'min:1'],
@@ -72,6 +73,7 @@ class ProductRequest extends FormRequest
         if ($this->has('categoryId')) {
             $this->merge([
                 'category_id' => $request['categoryId'],
+                'user_id' => $this->user()->id,
                 'merchant_account_id' => $this->user()->merchantAccount->id
             ]);
         }
